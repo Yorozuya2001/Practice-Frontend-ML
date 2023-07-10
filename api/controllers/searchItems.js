@@ -5,10 +5,10 @@ const searchItems = async (query) => {
   let data = await response.json();
   let info = {
     query: data.query,
-    results: cutResults(data.results, 5),
-    values: data.filters.length ? data.filters : null,
+    results: cutResults(data.results, 4),
+    categories: data.filters.length ? data.filters : null,
   };
-  console.log(info);
+
   return info;
 };
 
@@ -18,12 +18,20 @@ const cutResults = (results, num) => {
   results = results.splice(0, num);
   results = results.map((result) => {
     return {
+      author: {
+        name: result.seller.nickname,
+      },
+      condition: result.condition,
+      id: result.id,
       title: result.title,
-      link: result.permalink,
-      price: result.price,
+      price: {
+        currency: result.currency_id,
+        amount: result.price,
+      },
       state: result.address.state_name,
       city: result.address.city_name,
-      freeShipping: result.shipping.free_shipping,
+      picture: result.secure_thumbnail,
+      free_shipping: result.shipping.free_shipping,
     };
   });
   return results;
