@@ -1,0 +1,30 @@
+// bg principal #fff159
+// bg secondary #ededed
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("./font/proximanova-regular.woff2") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #fff159;
+  --secondary-color: #ededed;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--secondary-color);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
