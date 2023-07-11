@@ -30,7 +30,7 @@ const cutResults = (results, num) => {
       },
       state: result.address.state_name,
       city: result.address.city_name,
-      picture: result.secure_thumbnail,
+      picture: result.thumbnail,
       free_shipping: result.shipping.free_shipping,
     };
   });

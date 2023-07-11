@@ -8,6 +8,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Proxima Nova lg";
+  src: url("./font/proximanova-light.woff2") format("truetype");
+}
+
+a {
+  text-decoration: none;
+}
+
 :root {
   --primary-color: #fff159;
   --secondary-color: #ededed;
